@@ -1,0 +1,93 @@
+﻿@model IEnumerable<IronDome.Dto.ThreatManagement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreatSource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreatType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TargetArea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MissileAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThreatSource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThreatType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TargetArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MissileAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id = item.Id}) |
+                        <button id="myButton1" onclick="alert">Delete</button>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |         
+            </td>
+        </tr>
+        
+
+}
+    </tbody>
+</div>
+<div>
+    <p>
+        <a asp-action="Shager">Shager</a>
+    </p>
+</div>
+</table>
+<script>
+    function alert ()
+        {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+    }
+
+</script>

@@ -1,0 +1,13 @@
+﻿@model IronDome.Dto.AdminDto;
+<h1> Admin interface</h1>
+<div>
+	<p>Armory</p>
+
+	<label>@Model.MissileAmount</label>
+</div>
+<div >
+	@Html.ActionLink("Update", "Update")	
+</div>
+<div >
+	@Html.ActionLink("Threat Management", "Index", "ThreatManagement")
+</div>
