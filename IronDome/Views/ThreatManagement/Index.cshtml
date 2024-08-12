@@ -53,8 +53,12 @@
                 @Html.ActionLink("Edit", "Edit", new {  id = item.Id}) |
                         <button id="myButton1" onclick="alert">Delete</button>
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |         
-            </td>
+                @if (!item.IsActive)
+                {
+                    @Html.ActionLink("Launch", "Launch", new { Threat = item })
+                }
+
+                    </td>
         </tr>
         
 

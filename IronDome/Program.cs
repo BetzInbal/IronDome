@@ -1,6 +1,6 @@
 using IronDome.Data;
 using IronDome.Dto;
-using IronDome.Middleware;
+using IronDome.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -16,7 +16,9 @@ namespace IronDome
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>();
-            builder.Services.AddSingleton<AdminDto>();
+            builder.Services.AddSingleton<LaunchDto>();
+            builder.Services.AddScoped<IAdminService, AdminService>();
+            builder.Services.AddScoped<IThreatManagementService, ThreatManagementService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -29,7 +31,7 @@ namespace IronDome
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseMiddleware<SimpleMiddleware>();
+
             app.UseRouting();
 
             app.UseAuthorization();

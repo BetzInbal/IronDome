@@ -1,13 +1,33 @@
-﻿@model IronDome.Dto.AdminDto;
-<h1> Admin interface</h1>
-<div>
-	<p>Armory</p>
+﻿@model IronDome.ModelVM.AdminVM
 
-	<label>@Model.MissileAmount</label>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h4>AdminVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MissileAmount" class="control-label"></label>
+                <input asp-for="MissileAmount" class="form-control" />
+                <span asp-validation-for="MissileAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
-<div >
-	@Html.ActionLink("Update", "Update")	
+
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
-<div >
-	@Html.ActionLink("Threat Management", "Index", "ThreatManagement")
-</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -251,3 +251,4 @@ C:\Users\codco\Desktop\git22\IronDome\IronDome\bin\Debug\net8.0\runtimes\win\lib
 C:\Users\codco\Desktop\git22\IronDome\IronDome\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\codco\Desktop\git22\IronDome\IronDome\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\codco\Desktop\git22\IronDome\IronDome\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\codco\Desktop\git22\IronDome\IronDome\obj\Debug\net8.0\IronDome.sourcelink.json

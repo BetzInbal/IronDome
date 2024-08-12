@@ -3,11 +3,10 @@
 namespace IronDome.Dto
 {
 
-    public class AdminDto
+    public class LaunchDto
     {
-        public int MissileAmount { get; set; } = 200;
-        public Queue<ThreatModel> ActiveThreats { get; set; } = [];
-
+        public List<ThreatManagement> Threats { get; set; }
+        public Dictionary<int, CancellationTokenSource> activeLaunch {  get; set; }
 
     }
 }
